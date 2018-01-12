@@ -16,6 +16,6 @@ class RadioAdapter : BaseQuickAdapter<Option, BaseViewHolder>(R.layout.widget_ra
     override fun convert(helper: BaseViewHolder, item: Option) {
         helper.setBackgroundColor(R.id.layout, if (item.isChecked) Color.parseColor("#E5F3FE") else Color.parseColor("#FFFFFF"))
         helper.setTextColor(R.id.title, if (item.isChecked) Color.parseColor("#008EFF") else Color.parseColor("#757575"))
-        helper.setText(R.id.title, item.title)
+        helper.setText(R.id.title, "${helper.layoutPosition + 1}、${item.name}")
     }
 }
