@@ -19,6 +19,9 @@ class RadioView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     private lateinit var mList: List<Option>
     private var mListener: OnCheckedListener? = null
 
+    // 可以点击
+    var canChecked = true
+
     init {
         this.setAdapter(adapter)
         this.layoutManager = LinearLayoutManager(context)
@@ -26,16 +29,18 @@ class RadioView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
-        val option = adapter?.getItem(position) as Option
-        if (!option.isChecked) {
-            // 清空已选中项
-            mList.filter { it.isChecked }.forEach { it.isChecked = false }
-            // 设置当前选中项
-            mList[position].isChecked = true
-            // 刷新界面
-            adapter.notifyDataSetChanged()
-            // 触发自定义监听事件
-            mListener?.onRadioCheckedListener(position, option)
+        if (canChecked) {
+            val option = adapter?.getItem(position) as Option
+            if (!option.isChecked) {
+                // 清空已选中项
+                mList.filter { it.isChecked }.forEach { it.isChecked = false }
+                // 设置当前选中项
+                mList[position].isChecked = true
+                // 刷新界面
+                adapter.notifyDataSetChanged()
+                // 触发自定义监听事件
+                mListener?.onRadioCheckedListener(position, option)
+            }
         }
     }
 

@@ -19,6 +19,9 @@ class MultiselectView @JvmOverloads constructor(context: Context, attrs: Attribu
     private lateinit var mList: List<Option>
     private var mListener: OnCheckedChangeListener? = null
 
+    // 可以点击
+    var canChecked = true
+
     init {
         this.setAdapter(adapter)
         this.layoutManager = LinearLayoutManager(context)
@@ -26,12 +29,14 @@ class MultiselectView @JvmOverloads constructor(context: Context, attrs: Attribu
     }
 
     override fun onItemClick(adapter: BaseQuickAdapter<*, *>?, view: View?, position: Int) {
-        // 设置当前选中项
-        mList[position].isChecked = !mList[position].isChecked
-        // 刷新界面
-        adapter?.notifyItemChanged(position)
-        // 触发自定义监听事件
-        mListener?.onMultiCheckedChangeListener(position, mList[position])
+        if (canChecked) {
+            // 设置当前选中项
+            mList[position].isChecked = !mList[position].isChecked
+            // 刷新界面
+            adapter?.notifyItemChanged(position)
+            // 触发自定义监听事件
+            mListener?.onMultiCheckedChangeListener(position, mList[position])
+        }
     }
 
     /**

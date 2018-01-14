@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.test.MainActivity">
 
-    <fragment
-        android:id="@+id/text"
-        class="com.test.TestFragment"
+    <include layout="@layout/include_toolbar" />
+
+    <com.saxxhw.widget.option.multi.MultiselectView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/radio"
+        android:layout_height="wrap_content"></com.saxxhw.widget.option.multi.MultiselectView>
 </LinearLayout>
