@@ -15,7 +15,7 @@ import com.saxxhw.widget.option.Option
 class RadioAdapter : BaseQuickAdapter<Option, BaseViewHolder>(R.layout.widget_radio_view, null) {
 
     override fun convert(helper: BaseViewHolder, item: Option) {
-        GlideApp.with(mContext).load(item.image.url).into(helper.getView(R.id.image))
+        GlideApp.with(mContext).load(item?.image?.url).into(helper.getView(R.id.image))
         helper.setBackgroundColor(R.id.layout, if (item.isChecked) Color.parseColor("#E5F3FE") else Color.parseColor("#FFFFFF"))
         helper.setTextColor(R.id.title, if (item.isChecked) Color.parseColor("#008EFF") else Color.parseColor("#757575"))
         helper.setText(R.id.title, "${helper.layoutPosition + 1}、${item.name}")
