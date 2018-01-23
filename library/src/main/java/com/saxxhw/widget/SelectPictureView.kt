@@ -112,14 +112,13 @@ class SelectPictureView @JvmOverloads constructor(context: Context, attrs: Attri
     }
 
     override fun onItemClick(adapterView: AdapterView<*>, view: View, position: Int, l: Long) {
-        if (!showAdd) {
-            return
-        }
         val size = addPicAdapter.list.size
-        if (size < maxValue && position == size) {
+        if (showAdd && size < maxValue && position == size) {
             if (null != pictureSelectListener) {
-                pictureSelectListener?.onPictureSelect()
+                pictureSelectListener?.onAddClickListener()
             }
+        } else {
+            pictureSelectListener?.onPictureSelect(position, images)
         }
     }
 
@@ -132,7 +131,8 @@ class SelectPictureView @JvmOverloads constructor(context: Context, attrs: Attri
     }
 
     interface onPictureSelectListener {
-        fun onPictureSelect()
+        fun onAddClickListener()
+        fun onPictureSelect(position: Int, imageList: List<String>)
     }
 
     interface onPictureRemoveListener {
