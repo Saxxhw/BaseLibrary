@@ -55,7 +55,7 @@ class SelectPictureView @JvmOverloads constructor(context: Context, attrs: Attri
      * @return
      */
     val missingCount: Int
-        get() = maxValue - addPicAdapter.count
+        get() = maxValue - images.size
 
     init {
         numColumns = 4
