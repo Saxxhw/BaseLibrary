@@ -8,13 +8,14 @@ import android.os.Parcelable
  * 邮箱：Saxxhw@126.com
  * 功能：
  */
-data class Option(val code: String, val stepCode: String, val name: String, val image: Image, var isChecked: Boolean) : Parcelable {
+data class Option(val code: String, val stepCode: String, val name: String, val image: Image, val hiddenDangerStatus: Int, var isChecked: Boolean) : Parcelable {
 
     constructor(source: Parcel) : this(
             source.readString(),
             source.readString(),
             source.readString(),
-            source.readParcelable<Image>(Image::class.java.classLoader), 1 == source.readInt()
+            source.readParcelable<Image>(Image::class.java.classLoader),
+            source.readInt(), 1 == source.readInt()
     )
 
     override fun describeContents() = 0
@@ -24,6 +25,7 @@ data class Option(val code: String, val stepCode: String, val name: String, val 
         writeString(stepCode)
         writeString(name)
         writeParcelable(image, 0)
+        writeInt(hiddenDangerStatus)
         writeInt((if (isChecked) 1 else 0))
     }
 
