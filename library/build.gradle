@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 12
-        versionName "1.1.1"
+        versionCode 13
+        versionName "1.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -26,16 +26,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // android
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile 'com.android.support:support-v13:27.0.2'
-    compile 'com.android.support:design:27.0.2'
+    compile 'com.android.support:appcompat-v7:27.1.0'
+    compile 'com.android.support:support-v13:27.1.0'
+    compile 'com.android.support:design:27.1.0'
     // kotlin
-    compile 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.2.10'
-    compile 'org.jetbrains.anko:anko-commons:0.10.3'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.21'
+    compile 'org.jetbrains.anko:anko-commons:0.10.4'
     // rx
-    compile 'io.reactivex.rxjava2:rxjava:2.1.7'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.9'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     // network
     compile 'com.google.code.gson:gson:2.8.2'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -43,15 +43,15 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
-    compile 'com.github.bumptech.glide:glide:4.3.1'
-    kapt 'com.github.bumptech.glide:compiler:4.3.1'
+    compile 'com.github.bumptech.glide:glide:4.5.0'
+    kapt 'com.github.bumptech.glide:compiler:4.5.0'
     // QR Code
     compile 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
     compile 'cn.bingoogolapple:bga-zbar:1.1.9@aar'
     // other
     compile 'com.kaopiz:kprogresshud:1.1.0'
     compile 'it.sephiroth.android.library.imagezoom:library:1.0.4'
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
 }
 
 apply plugin: 'com.github.dcendents.android-maven'
