@@ -1,7 +1,9 @@
 package com.test
 
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
 import com.saxxhw.base.BaseActivity
 import com.saxxhw.widget.SelectPictureView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +25,7 @@ class MainActivity : BaseActivity(), SelectPictureView.onPictureSelectListener {
     }
 
     override fun onAddClickListener() {
-        toast("add")
+
     }
 
     override fun onPictureSelect(position: Int, imageList: List<String>) {
