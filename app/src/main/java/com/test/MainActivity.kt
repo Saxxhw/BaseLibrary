@@ -1,9 +1,6 @@
 package com.test
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
 import com.saxxhw.base.BaseActivity
 import com.saxxhw.widget.SelectPictureView
 import kotlinx.android.synthetic.main.activity_main.*
