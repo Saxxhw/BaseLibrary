@@ -1,4 +1,4 @@
-package com.saxxhw.matisse.engine.impl
+package com.saxxhw.glide
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -8,8 +8,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.saxxhw.glide.GlideApp
-import com.saxxhw.matisse.engine.ImageEngine
+import com.zhihu.matisse.engine.ImageEngine
 
 /**
  * Created by Saxxhw on 2017/7/13.
