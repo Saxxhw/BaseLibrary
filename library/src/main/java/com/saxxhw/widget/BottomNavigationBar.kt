@@ -24,14 +24,14 @@ import java.io.IOException
 class BottomNavigationBar : LinearLayout {
 
     companion object {
-        private val DEFAULT_XML_RESOURCE = 0
+        private const val DEFAULT_XML_RESOURCE = 0
 
-        private val TAB_TAG = "tab"
-        private val RESOURCE_NOT_FOUND = 0
+        private const val TAB_TAG = "tab"
+        private const val RESOURCE_NOT_FOUND = 0
 
-        private val ID = "id"
-        private val ICON = "icon"
-        private val TITLE = "title"
+        private const val ID = "id"
+        private const val ICON = "icon"
+        private const val TITLE = "title"
     }
 
     // 上下文对象
@@ -39,6 +39,7 @@ class BottomNavigationBar : LinearLayout {
 
     // 全部控件集合
     private lateinit var viewArray: Array<View>
+
 
     // 配置文件资源id
     private var tabXmlResource: Int
@@ -55,12 +56,14 @@ class BottomNavigationBar : LinearLayout {
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         mContext = context
-        // 绑定布局
-        LayoutInflater.from(context).inflate(R.layout.widget_bottom_navigation_bar, this, true)
-        // 设置布局对齐方向
-        gravity = Gravity.BOTTOM
         // 初始化
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.BottomNavigationBar, defStyleAttr, 0)
+
+        // 绑定布局
+        val layoutId = ta.getResourceId(R.styleable.BottomNavigationBar_bb_tabLayoutResource, R.layout.widget_bottom_navigation_bar)
+        LayoutInflater.from(context).inflate(layoutId, this, true)
+        // 设置布局对齐方向
+        gravity = Gravity.BOTTOM
 
         // 其他按钮
         tabXmlResource = ta.getResourceId(R.styleable.BottomNavigationBar_bb_tabXmlResource, 0)

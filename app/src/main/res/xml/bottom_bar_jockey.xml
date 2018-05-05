@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon="@drawable/select_menu_home"
+        id="@+id/tab_one"
+        title="@string/home" />
+    <tab
+        icon="@drawable/select_menu_monitor"
+        id="@+id/tab_two"
+        title="@string/monitor" />
+    <tab
+        icon="@mipmap/ic_menu_repair"
+        id="@+id/tab_repair"
+        title="@string/repair" />
+    <tab
+        icon="@drawable/select_menu_work_manage"
+        id="@+id/tab_three"
+        title="@string/order" />
+    <tab
+        icon="@drawable/select_menu_app"
+        id="@+id/tab_four"
+        title="@string/device_manage" />
+</tabs>

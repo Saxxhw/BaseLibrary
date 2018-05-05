@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BaseLibrary</string>
+    <string name="home">首页</string>
+    <string name="monitor">监控</string>
+    <string name="repair">报修</string>
+    <string name="order">工单</string>
+    <string name="device_manage">设备管理</string>
 </resources>
