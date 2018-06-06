@@ -9,9 +9,9 @@
 
     <include layout="@layout/include_toolbar" />
 
-    <com.saxxhw.widget.BottomNavigationBar
+    <com.saxxhw.widget.SelectPictureView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bb_tabXmlResource="@xml/bottom_bar_jockey"
-        app:bb_tabLayoutResource="@layout/widget_bottom_navigation_bar" />
+        app:spv_max_value="5"
+        app:spv_show_add="true" />
 </LinearLayout>
