@@ -18,7 +18,7 @@ import com.saxxhw.R
 class ChatExtendMenu @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : RecyclerView(context, attrs, defStyle) {
 
     companion object {
-        private val SPAN = 3
+        private const val SPAN = 4
     }
 
     private var adapter: MenuAdapter = MenuAdapter()
