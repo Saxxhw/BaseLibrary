@@ -8,7 +8,7 @@ class MainActivity : BaseActivity() {
     override fun getLayout(): Int = R.layout.activity_main
 
     override fun initEventAndData(savedInstanceState: Bundle?) {
-
+        title = "一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十"
     }
 
     override fun bindListener() {
