@@ -118,7 +118,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * 展示空数据状态
      */
-    protected fun showEmptyState(title: String = "", content: String = "") {
+    protected fun showEmptyState(title: String, content: String) {
         if (null == mStateLayout) {
             throw IllegalArgumentException("You must return a right target view for loading")
         }
@@ -128,7 +128,7 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * 展示请求错误状态
      */
-    protected fun showErrorState(title: String = "", content: String = "") {
+    protected fun showErrorState(title: String, content: String) {
         if (null == mStateLayout) {
             throw IllegalArgumentException("You must return a right target view for loading")
         }

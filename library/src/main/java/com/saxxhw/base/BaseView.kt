@@ -38,10 +38,10 @@ interface BaseView {
     /**
      * show empty
      */
-    fun showEmpty()
+    fun showEmpty(title: String = "", content: String = "")
 
     /**
      * show network error
      */
-    fun showNetworkError()
+    fun showNetworkError(title: String = "", content: String = "")
 }
