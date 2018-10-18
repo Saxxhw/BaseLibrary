@@ -118,21 +118,21 @@ abstract class BaseActivity : AppCompatActivity() {
     /**
      * 展示空数据状态
      */
-    protected fun showEmptyState() {
+    protected fun showEmptyState(title: String = "", content: String = "") {
         if (null == mStateLayout) {
             throw IllegalArgumentException("You must return a right target view for loading")
         }
-        mStateLayout?.showEmpty(null, null, View.OnClickListener { onRetrieve() })
+        mStateLayout?.showEmpty(title, content, View.OnClickListener { onRetrieve() })
     }
 
     /**
      * 展示请求错误状态
      */
-    protected fun showErrorState() {
+    protected fun showErrorState(title: String = "", content: String = "") {
         if (null == mStateLayout) {
             throw IllegalArgumentException("You must return a right target view for loading")
         }
-        mStateLayout?.showError("", "", View.OnClickListener { onRetrieve() })
+        mStateLayout?.showError(title, content, View.OnClickListener { onRetrieve() })
     }
 
     protected abstract fun getLayout(): Int
